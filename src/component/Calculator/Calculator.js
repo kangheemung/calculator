@@ -1,6 +1,10 @@
 // Calculator.js
 
 import React, { useState } from 'react';
+import NumberInput from './NumberInput';
+import OperatorSelect from './OperatorSelect';
+import NumButton from './NumButton';
+import ResultDisplay from './ResultDisplay';
 
 function Calculator() {
   const [input1, setInput1] = useState('');
@@ -49,16 +53,11 @@ function Calculator() {
   return (
     <div>
       <h1>計算機アプリチャレンジ</h1>
-      <input type="text" value={input1} onChange={(e) => setInput1(e.target.value)}/>
-      <select onChange={handleOperatorChange} value={operator}>
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">x</option>
-        <option value="/">÷</option>
-     </select>
-      <input type="text" value={input2} onChange={(e) => setInput2(e.target.value)}/>
-      <button onClick={handleCalculation}>計算！！</button>
-      <h2>結果: {result}</h2>
+      <NumberInput value={input1} onChange={(e) => setInput1(e.target.value)} />
+      <OperatorSelect value={operator} onChange={handleOperatorChange} />
+      <NumberInput value={input2} onChange={(e) => setInput2(e.target.value)} />
+      <NumButton onClick={handleCalculation}>計算！！</NumButton>
+      <ResultDisplay result={result} />
     </div>
   );
 }

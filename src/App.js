@@ -4,7 +4,7 @@ import Header from './Header';
 import Input from './component/Input';
 import Button from './component/Button';
 import { useState } from 'react'
-import Calculator from './component/Calculator';
+import Calculator from './component/Calculator/Calculator';
 
 function App() {
   const [name, setName] = useState('');
